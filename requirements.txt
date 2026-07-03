@@ -1,0 +1,16 @@
+torch
+torchaudio
+transformers>=4.38,<5
+lightning
+torchmetrics
+scikit-learn
+pandas
+numpy
+matplotlib
+soundfile
+librosa
+pyyaml
+tqdm
+pytest
+jupyterlab
+ipykernel

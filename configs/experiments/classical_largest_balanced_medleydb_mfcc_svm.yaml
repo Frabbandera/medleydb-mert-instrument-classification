@@ -1,0 +1,43 @@
+experiment_id: classical_largest_balanced_medleydb_mfcc_svm
+approach: classical_baseline
+notes: Classical MFCC plus spectral-descriptor SVM baseline on the same largest-balanced
+  MedleyDB instrument split used by the MERT experiments.
+seed: 42
+data:
+  subset_profile: largest_balanced
+  label_granularity: medleydb_instrument
+  subset_csv: data/metadata/subset_largest_balanced_medleydb_instrument.csv
+  label_to_id: data/metadata/labels_largest_balanced_medleydb_instrument_label_to_id.json
+  cache_dir: NA
+  medleydb_root: MedleyDB
+  batch_size: 1
+  num_workers: 0
+  sampler: shuffle
+  subset_strategy: balanced
+features:
+  sample_rate: 22050
+  n_mfcc: 20
+  n_fft: 2048
+  hop_length: 512
+model:
+  model_name: mfcc_spectral_descriptors
+  classifier_type: svm
+  C: 10.0
+  kernel: rbf
+  gamma: scale
+  class_weight: null
+representation:
+  layer: NA
+  pooling: feature_stats
+training:
+  learning_rate: 0.0
+  weight_decay: 0.0
+  max_epochs: 1
+  early_stopping_patience: 0
+  accelerator: cpu
+  devices: 1
+  precision: 32-true
+  deterministic: true
+  loss_weighting: none
+output:
+  registry_path: results/experiment_registry.csv

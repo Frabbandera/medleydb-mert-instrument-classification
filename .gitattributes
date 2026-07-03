@@ -1,0 +1,12 @@
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.wav binary
+*.flac binary
+*.mp3 binary
+*.npy binary
+*.npz binary
+*.pt binary
+*.pth binary
+*.ckpt binary

@@ -1,0 +1,13 @@
+mixture_dataset_id: largest_balanced_full_mix
+mode: original_full_mix
+subset_profile: largest_balanced
+label_granularity: medleydb_instrument
+subset_csv: data/metadata/subset_largest_balanced_medleydb_instrument.csv
+stem_index_csv: data/metadata/stem_index.csv
+medleydb_root: MedleyDB
+out: data/metadata/mixtures/largest_balanced_full_mix.csv
+label_to_id: data/metadata/mixtures/largest_balanced_full_mix_label_to_id.json
+activity_rule: stem_rms_dbfs
+activity_threshold_dbfs: -50.0
+min_active_labels: 1
+seed: 42

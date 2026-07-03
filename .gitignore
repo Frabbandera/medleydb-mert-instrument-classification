@@ -1,0 +1,64 @@
+# Local reference repositories and course material
+MedleyDB/
+medleydb-master/
+MERT-main/
+LeadInstrumentDetection-main/
+Persian-Musical-Instruments-Classification-Using-Polyphonic-Data-Augmentation-main/
+Papers/
+project6.pdf
+code_versions/
+
+# Generated datasets, metadata, reports, and experiment outputs
+data/cache/*
+!data/cache/.gitkeep
+data/metadata/*
+!data/metadata/.gitkeep
+data/reports/*
+!data/reports/.gitkeep
+data/processed/
+data/raw/
+results/*
+!results/.gitkeep
+checkpoints/
+lightning_logs/
+wandb/
+
+# Audio, embeddings, and model weights
+*.wav
+*.flac
+*.mp3
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+*.zip
+*.pyc
+
+# Python and local environments
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tmp/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Additional generated ML artifacts
+*.joblib
+*.pkl
+*.pickle
+*.parquet
+*.feather
+*.h5
+*.hdf5
+huggingface/
+hf_cache/

@@ -1,0 +1,45 @@
+experiment_id: polyphonic_largest_balanced_full_mix_mert95_last_mean_mlp
+task: polyphonic_multilabel
+approach: polyphonic_multilabel
+notes: Original MedleyDB full-mix segments using stem activity labels for multi-label
+  instrument evaluation.
+seed: 42
+data:
+  mixture_dataset_id: largest_balanced_full_mix
+  mixture_mode: original_full_mix
+  subset_profile: largest_balanced
+  label_granularity: medleydb_instrument
+  manifest_csv: data/metadata/mixtures/largest_balanced_full_mix.csv
+  label_to_id: data/metadata/mixtures/largest_balanced_full_mix_label_to_id.json
+  cache_dir: data/cache/mert_v1_95m/mixtures/largest_balanced_full_mix/layer_last_pool_mean
+  medleydb_root: MedleyDB
+  batch_size: 32
+  num_workers: 0
+  extraction_batch_size: 1
+  activity_rule: stem_rms_dbfs
+model:
+  model_name: m-a-p/MERT-v1-95M
+  model_revision: main
+  classifier_type: mlp
+  hidden_dim: 256
+  dropout: 0.2
+  layer_aggregation: none
+representation:
+  layer: last
+  pooling: mean
+training:
+  learning_rate: 0.001
+  weight_decay: 0.01
+  max_epochs: 30
+  early_stopping_patience: 8
+  accelerator: auto
+  devices: 1
+  precision: 32-true
+  deterministic: true
+  loss_weighting: pos_weight
+evaluation:
+  threshold: 0.5
+output:
+  layout: run
+  run_id: latest
+  registry_path: results/experiment_registry.csv

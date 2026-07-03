@@ -1,0 +1,42 @@
+experiment_id: finetune_largest_balanced_medleydb_mert95_last1
+approach: mert_finetune
+notes: Partially fine-tune only the last transformer layer of MERT-v1-95M on the largest-balanced
+  MedleyDB instrument subset.
+seed: 42
+data:
+  subset_profile: largest_balanced
+  label_granularity: medleydb_instrument
+  subset_csv: data/metadata/subset_largest_balanced_medleydb_instrument.csv
+  label_to_id: data/metadata/labels_largest_balanced_medleydb_instrument_label_to_id.json
+  cache_dir: NA
+  medleydb_root: MedleyDB
+  batch_size: 1
+  num_workers: 0
+  sampler: shuffle
+  subset_strategy: balanced
+model:
+  model_name: m-a-p/MERT-v1-95M
+  model_revision: main
+  classifier_type: mlp
+  hidden_dim: 256
+  dropout: 0.2
+  unfreeze_mode: last_1
+  allow_full_finetune: false
+representation:
+  layer: last
+  pooling: mean
+training:
+  head_learning_rate: 0.001
+  backbone_learning_rate: 1.0e-05
+  weight_decay: 0.0001
+  max_epochs: 20
+  early_stopping_patience: 5
+  accelerator: auto
+  devices: 1
+  precision: 16-mixed
+  deterministic: true
+  accumulate_grad_batches: 8
+  gradient_checkpointing: true
+  loss_weighting: none
+output:
+  registry_path: results/experiment_registry.csv

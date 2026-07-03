@@ -1,0 +1,12 @@
+mixture_dataset_id: largest_balanced_synthetic_k
+mode: synthetic_random
+subset_profile: largest_balanced
+label_granularity: medleydb_instrument
+subset_csv: data/metadata/subset_largest_balanced_medleydb_instrument.csv
+stem_index_csv: data/metadata/stem_index.csv
+medleydb_root: MedleyDB
+out: data/metadata/mixtures/largest_balanced_synthetic_k.csv
+label_to_id: data/metadata/mixtures/largest_balanced_synthetic_k_label_to_id.json
+k_values: [1, 2, 3, 4]
+mixtures_per_split_per_k: 64
+seed: 42
