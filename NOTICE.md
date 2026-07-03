@@ -18,11 +18,4 @@ The following files are intentionally excluded:
 - experiment result folders;
 - local Google Drive or Colab paths;
 - downloaded third-party repositories and datasets.
-
-## Licensing and reuse
-
-No open-source licence is currently assigned to this repository. The code and documentation should not be reused, redistributed or modified without permission from the project authors.
-
-## Privacy and repository hygiene
-
-The notebooks were cleaned before publication: execution outputs were removed and embedded personal access tokens were not retained.
+  
