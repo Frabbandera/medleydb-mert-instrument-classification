@@ -125,21 +125,6 @@ This was a collaborative team project. The repository is presented as a team-dev
 
 Because several tasks were developed in parallel, the public description does not assign exclusive ownership of individual modules. The project is included in this portfolio to document exposure to machine-learning validation workflows, audio-data preprocessing, controlled experimental design and reproducible reporting.
 
-## Relevance to Acoustic Engineering / Simulation / AI
-
-Although the dataset is musical, the project is relevant to AI-assisted engineering workflows because it demonstrates a complete validation-oriented ML pipeline for acoustic/audio data:
-
-- controlled dataset construction;
-- leakage-aware splitting;
-- baseline comparison;
-- representation ablations;
-- validation-based checkpoint selection;
-- multi-label evaluation;
-- robustness analysis under increasing source overlap;
-- interpretation of false positives, false negatives and class-level failure modes.
-
-These practices transfer directly to engineering contexts where AI models are used to analyse measured or simulated acoustic data and must be evaluated beyond aggregate accuracy.
-
 ## How to Run / Reproduce
 
 This repository does not include MedleyDB audio files, cached embeddings, trained checkpoints or generated result folders.
