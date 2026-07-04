@@ -119,12 +119,6 @@ In the controlled synthetic-mixture setting, the frozen MERT-v1-95M multi-label 
 
 The main failure mode was not complete absence of recognition. The model often detected part of the active instrument set, but tended to over-predict additional labels or miss acoustically heterogeneous classes.
 
-## My Contribution
-
-This was a collaborative team project. The repository is presented as a team-developed workflow covering dataset preparation, modelling, experiment configuration, validation, error analysis and technical reporting.
-
-Because several tasks were developed in parallel, the public description does not assign exclusive ownership of individual modules. The project is included in this portfolio to document exposure to machine-learning validation workflows, audio-data preprocessing, controlled experimental design and reproducible reporting.
-
 ## How to Run / Reproduce
 
 This repository does not include MedleyDB audio files, cached embeddings, trained checkpoints or generated result folders.
@@ -171,21 +165,6 @@ Run the classical baseline without MERT embedding extraction:
 ```bash
 python -m src.experiments.run_experiment \
   --config configs/experiments/classical_largest_balanced_medleydb_mfcc_svm.yaml
-```
-
-## Validation
-
-The cleaned repository was checked with:
-
-```bash
-python -m compileall -q src tests
-python -m pytest -q
-```
-
-At cleanup time, the test suite passed with:
-
-```text
-59 passed, 1 warning
 ```
 
 ## Report and Documentation
